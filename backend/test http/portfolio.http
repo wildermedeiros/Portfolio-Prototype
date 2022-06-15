@@ -1,5 +1,9 @@
-POST http://localhost:3080/portfolio
-content-type: application/json
+@URL = http://localhost:3080/api/portfolio
+
+###
+
+POST {{URL}}
+Content-type: application/json
 
 {
     "title": "Portfolio teste",
@@ -7,4 +11,24 @@ content-type: application/json
     "longDescription": "alguma descrição longa"
 }
 
-GET http://localhost:3080/portfolio
+###
+
+GET {{URL}}
+
+###
+
+GET http://localhost:3080/api/portfolio/portfolio-teste
+
+###
+
+PATCH http://localhost:3080/api/portfolio/portfolio-teste
+Content-Type: application/json
+
+{
+    "title": "Realizando uma alteração no patch",
+    "description": "A alteração foi realizada com sucesso?"
+}
+
+###
+
+DELETE http://localhost:3080/api/portfolio/portfolio-segundo-teste
