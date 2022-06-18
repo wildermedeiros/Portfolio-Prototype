@@ -29,14 +29,14 @@ const AboutSection = () => {
             <GlobalStyles />
             <ThemeProvider theme={counterStrike}>
 
-                <Panel>Wilder Siqueira Medeiros</Panel>
-                <h2>Desenvolvedor de jogos</h2>
+              <h2>Wilder Siqueira Medeiros</h2>
+              <h2>Desenvolvedor de jogos</h2>
 
-                <p> Junior Game Designer with experience in Unity and C#. I have the ability to work with an engine or tools or system to trigger events. I'm able to create the rules, tune the game and to implement some gameplay features. Taking Computer Science at Universidade Tecnológica Federal do Paraná (UTFPR).</p>
+              <p> Junior Game Designer with experience in Unity and C#. I have the ability to work with an engine or tools or system to trigger events. I'm able to create the rules, tune the game and to implement some gameplay features. Taking Computer Science at Universidade Tecnológica Federal do Paraná (UTFPR).</p>
 
-                <Button>Contact Me</Button>
+              <Button>Contact Me</Button>
 
-            <img src="http://lorempixel.com.br/500/400/?1"></img>
+              <img></img>
             
             </ThemeProvider>
         </div>
@@ -59,7 +59,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'ms_sans_serif';
   }
-  ${styleReset}
 `;
+  
+//background: rgb(64, 71, 55);
 
 export default AboutSection
