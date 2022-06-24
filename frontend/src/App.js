@@ -9,6 +9,8 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom'
 
 import AboutUs from "./pages/AboutUs";
 import Portfolio from "./pages/Portfolio";
+import Nav from './components/Nav'
+import ContactMe from "./pages/ContactMe";
 
 function App() {
   return (
@@ -16,13 +18,13 @@ function App() {
       <GlobalStyle />
       <ThemeProvider theme={counterStrike}>
 
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<AboutUs />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<AboutUs />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<ContactMe />} />
 
-          </Routes>
-        </BrowserRouter>
+        </Routes>
 
       </ThemeProvider>
     </div>
