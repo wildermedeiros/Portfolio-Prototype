@@ -22,10 +22,10 @@ const portfolioSchema = new Schema( {
     longDescription: {
         type: String
     },
-    // image: {
-    //     type: String,
-    //     required: true
-    // },
+    image: {
+        type: String,
+        required: true
+    },
     // technologies: [
     //     {
     //         label: String,
