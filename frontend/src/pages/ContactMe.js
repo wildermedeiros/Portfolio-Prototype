@@ -9,7 +9,7 @@ const ContactMe = () => {
     return (
         <ContactStyled>
             <Title>
-                Hellou
+                <h2>Get in touch</h2>
             </Title>
             <Areas>
                 <FormArea>
@@ -28,7 +28,6 @@ const ContactStyled = styled.div`
 `;
 
 const Title = styled.div`
-    margin-bottom: 4rem;
     h2 {
         color: white;
     }

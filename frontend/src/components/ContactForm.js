@@ -43,6 +43,7 @@ const ContactForm = () => {
             <InputArea>
                 <label>Name:</label>
                 <TextField
+                    placeholder='Type here...'
                     type="text"
                     value={name}
                     onChange={(e) => {setName(e.target.value)}}
@@ -51,6 +52,7 @@ const ContactForm = () => {
             <InputArea>
                 <label>Email:</label>
                 <TextField
+                    placeholder='Type here...'
                     type="email"
                     value={email}
                     onChange={(e) => {setEmail(e.target.value)}}
@@ -58,8 +60,10 @@ const ContactForm = () => {
             </InputArea>
             <InputArea>
                 <label>Message:</label>
-                <TextField
-                    rows='5'
+                <TextField 
+                    placeholder='Type here...'
+                    multiline rows={4}  
+                    fullWidth
                     value={message}
                     onChange={(e) => {setMessage(e.target.value)}}
                 />
