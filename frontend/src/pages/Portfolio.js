@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {useLocation} from 'react-router-dom'
 
 import Card from '../components/Card'
+import PortfolioDetail from '../components/PortfolioDetail'
 import {useApi} from '../hooks/useApi'
 
 const Portfolio = () => {
@@ -13,13 +14,14 @@ const Portfolio = () => {
 
     return (
         <PortfolioList>
-                <Hide>
-                    <CardList>
-                        {data?.data?.map(project => {
-                            return( <Card key={project.slug} project={project}/> )
-                        })}
-                    </CardList>
-                </Hide>
+
+            {slug && <PortfolioDetail slug={slug} />}
+            
+                <CardList>
+                    {data?.data?.map(project => {
+                        return( <Card key={project.slug} project={project}/> )
+                    })}
+                </CardList>
         </PortfolioList>
     )
 }

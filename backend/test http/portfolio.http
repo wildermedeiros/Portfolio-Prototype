@@ -6,9 +6,27 @@ POST {{URL}}
 Content-type: application/json
 
 {
-    "title": "Portfolio teste",
-    "description": "alguma descrição",
-    "longDescription": "alguma descrição longa"
+    "title": "The Bicaratian",
+    "description": "My indie game at google play store",
+    "longDescription": "Jogo desenvolvido durante a disciplina de desenvolvimento de aplicativos moveis na UTFPR-MD",
+    "image": "https://play-lh.googleusercontent.com/pj0KLSILT2J-ExsDw-vJiOrx9gJQfKaqVjvuS8B5M8r8nZH2FQf975sW7n2sMek9O1c=w2560-h1440",
+    "technologies": [
+        {
+            "label": "Unity",
+            "icon": "unity",
+            "iconType": "fab"
+        },
+        {
+            "label": "VSCode",
+            "icon": "code",
+            "iconType": "fas"
+        },
+        {
+            "label": "SourceTree",
+            "icon": "sourcetree",
+            "iconType": "fab"
+        }
+    ]
 }
 
 ###
@@ -17,7 +35,7 @@ GET {{URL}}
 
 ###
 
-GET http://localhost:3080/api/portfolio/portfolio-teste
+GET http://localhost:3080/api/portfolio/try
 
 ###
 
@@ -26,9 +44,12 @@ Content-Type: application/json
 
 {
     "title": "Realizando uma alteração no patch",
-    "description": "A alteração foi realizada com sucesso?"
+    "description": "A alteração foi realizada com sucesso?",
+    "longDescription": "algo",
+    "image":"https://play-lh.googleusercontent.com/pj0KLSILT2J-ExsDw-vJiOrx9gJQfKaqVjvuS8B5M8r8nZH2FQf975sW7n2sMek9O1c=w2560-h1440",
+    "technologies": "algo"
 }
 
 ###
 
-DELETE http://localhost:3080/api/portfolio/portfolio-segundo-teste
+DELETE http://localhost:3080/api/portfolio/portfolio-teste
