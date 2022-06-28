@@ -7,7 +7,7 @@ import {
     Button, TextField
 } from 'react95';
 
-
+import {save} from '../services/Sheet'
 
 const ContactForm = () => {
     const [ name, setName ] = useState('');
@@ -35,6 +35,18 @@ const ContactForm = () => {
             Email: email,
             Mensagem: message,
             Data: moment().format('DD/MM/YYYY'),
+        }
+
+        save(data)
+
+        const result = await save(data);
+
+        if (result) {
+            setSucesso(result)
+            resetForm();
+        }
+        else {
+            setErro(!result)
         }
     }
 
