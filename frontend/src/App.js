@@ -9,14 +9,16 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
-import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import { Route, Routes , useLocation, useNavigate} from 'react-router-dom'
 
 import AboutUs from "./pages/AboutUs";
 import Portfolio from "./pages/Portfolio";
 import Nav from './components/Nav'
 import ContactMe from "./pages/ContactMe";
+import Admin from "./pages/Admin";
 
 function App() {
+  const location = useLocation()
   library.add(fab, fas)
 
   return (
@@ -24,13 +26,14 @@ function App() {
       <GlobalStyle />
       <ThemeProvider theme={counterStrike}>
 
-        <Nav />
+        {location.pathname !== '/admin' && <Nav />}
         <Routes>
           <Route path="/" element={<AboutUs />} />
           <Route path="/portfolio" element={<Portfolio />}>
             <Route path="/portfolio/:slug" element={<Portfolio />} /> 
           </Route>
           <Route path="/contact" element={<ContactMe />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
 
       </ThemeProvider>
