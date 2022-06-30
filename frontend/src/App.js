@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <ThemeProvider theme={counterStrike}>
-
+        
         {location.pathname !== '/admin' && <Nav />}
         <Routes>
           <Route path="/" element={<AboutUs />} />

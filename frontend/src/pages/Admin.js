@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 
-import { Jumbotron, Tabs, Tab, Container } from 'react-bootstrap'
+import {Tabs, Tab, Container } from 'react-bootstrap'
 
 import PortfolioList from '../components/admin/PortfolioList'
 import WelcomeTab from '../components/admin/WelcomeTab'
@@ -8,9 +8,9 @@ import WelcomeTab from '../components/admin/WelcomeTab'
 const Admin = () => {
     return (
         <Container>
-            <Jumbotron>
+            <div>
                 <h1>Admin Panel</h1>
-            </Jumbotron>
+            </div>
 
             <Tabs transition={false} defaultActiveKey="home" id="tab-navigation">
                 <Tab eventKey="home" title="Home">
@@ -18,11 +18,6 @@ const Admin = () => {
                 </Tab>
                 <Tab eventKey="portfolio" title="Portfolio">
                     <PortfolioList />
-                </Tab>
-                <Tab eventKey="user" title="User">
-                    <p>User</p>
-                    <p>{access}</p>
-                    <p>{user}</p>
                 </Tab>
             </Tabs>
         </Container>
