@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-import {Form, Container, Card, Button, Col, CardGroup} from 'react-bootstrap'
+import {Form, Container, Card, Button, Col} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const PortfolioForm = ({title, setTitle, shortDescription, setShortDescription, longDescription, setLongDescription, image, setImage, slug, tech, setTech}) => {

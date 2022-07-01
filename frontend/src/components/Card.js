@@ -2,11 +2,6 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-import {
-    Panel,
-    Divider
-} from 'react95';
-
 import moment from 'moment'
 import {Link} from 'react-router-dom'
 
@@ -35,9 +30,13 @@ const Card =  ({project}) => {
     )
 }
 
-const StyledCard = styled(Panel)`
+const StyledCard = styled.div`
     min-height: 30vh;
+    box-shadow: 0px 5px 10px rgba(240, 255, 0, 0.3);
+    border-color: #416CD5;
+    border-style: outset;
     text-align: center;
+    border-radius: 1rem;
     cursor: pointer;
     overflow: hidden;
     img {
@@ -66,8 +65,8 @@ const Info = styled.div`
 `;
 
 const Title = styled.h3`
+    padding-top: 2rem;
     display: flex;
     justify-content: space-between;
 `
-
 export default Card

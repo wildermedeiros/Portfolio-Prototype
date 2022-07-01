@@ -1,26 +1,58 @@
-import { createGlobalStyle} from 'styled-components';
-
-// original Windows95 font (optionally)
-import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
-import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-        font-family: 'ms_sans_serif';
-        src: url('${ms_sans_serif}') format('woff2');
-        font-weight: 400;
-        font-style: normal
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-    @font-face {
-        font-family: 'ms_sans_serif';
-        src: url('${ms_sans_serif_bold}') format('woff2');
-        font-weight: bold;
-        font-style: normal
+
+    html{
+        @media (max-width: 1700px){
+            font-size: 75%;
+        }
     }
-    body {
-        font-family: 'ms_sans_serif';
-        background: rgb(64, 71, 55);
+
+    body{
+        background: #1b1b1b;
+        font-family: 'Roboto', sans-serif;
         overflow-x: hidden;
+        text-decoration: none;
+    }
+
+    button{
+        font-weight: bold;
+        font-size: 1.1.rem;
+        cursor: pointer;
+        padding: 1rem 2rem;
+        border: 3px solid #416CD5;
+        background: transparent;
+        color: yellow;
+        transition: all 0.5s ease;
+        font-family: 'Inter', sans-serif;
+        &:hover{
+            background-color: #23d997;
+            color: white;
+        }
+    }
+
+    h2{
+        font-weight: lighter;
+        font-size: 4rem;
+    }
+
+    h3{
+        color: white;
+    }
+
+    h4{
+        font-weight:bold;
+        font-size: 1.2rem;
+        color: lightgrey;
+    }
+
+    a{
+        font-size: 1.1.rem;
     }
 
     span{
@@ -35,9 +67,9 @@ const GlobalStyle = createGlobalStyle`
         line-height: 150%;
     }
 
-    h2{
-        font-weight: lighter;
-        font-size: 3rem;
+    label{
+        color: black;
+        font-weight: bold;
     }
 `;
 

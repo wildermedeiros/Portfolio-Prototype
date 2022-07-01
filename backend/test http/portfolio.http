@@ -22,8 +22,8 @@ Content-type: application/json
             "iconType": "fas"
         },
         {
-            "label": "SourceTree",
-            "icon": "sourcetree",
+            "label": "Git",
+            "icon": "git",
             "iconType": "fab"
         }
     ]

@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Joy102, FileText, Folder, Access227 } from '@react95/icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { About, Description } from '../styles'
 
@@ -15,28 +17,26 @@ const ServicesSection = () => {
             <Cards>
                 <Card>
                     <div className='icon'>
-                        <FileText />   
-                        <h3>Portfolio</h3>
+                        <FontAwesomeIcon icon="fa-solid fa-book-heart" size='2x' />                        <h3>Portfolio</h3>
                     </div>
                     <p>Check my work on my Portfolio.</p>
                 </Card>
                 <Card>
                     <div className='icon'>
-                        <Joy102 />                      
-                        <h3>Play Store</h3>
+                        <FontAwesomeIcon icon="fa-brands fa-google-play" size='2x' />                        <h3>Play Store</h3>
                     </div>
                 <p>My indie game.</p>
                 </Card>
-                    <Card>
-                        <div className='icon'>
-                            <Access227 />
-                            <h3>My Graduation</h3>
-                        </div>
-                        <p>Taking Computer Science at UTFPR.</p>
-                    </Card>
                 <Card>
                     <div className='icon'>
-                        <Folder />                  
+                        <FontAwesomeIcon icon={faGraduationCap} size='2x' /> 
+                        <h3>My Graduation</h3>
+                    </div>
+                    <p>Taking Computer Science at UTFPR.</p>
+                </Card>
+                <Card>
+                    <div className='icon'>
+                        <FontAwesomeIcon icon={faGithub} size='2x' /> 
                         <h3>My code</h3>
                     </div>
                     <p>Check my Github Page.</p>

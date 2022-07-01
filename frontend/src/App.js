@@ -2,9 +2,6 @@ import React from "react";
 
 import GlobalStyle from "./components/GlobalStyle";
 
-import { ThemeProvider } from "styled-components";
-import counterStrike from "react95/dist/themes/counterStrike";
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -23,20 +20,18 @@ function App() {
 
   return (
     <div className="App">
-      <GlobalStyle />
-      <ThemeProvider theme={counterStrike}>
-        
-        {location.pathname !== '/admin' && <Nav />}
-        <Routes>
-          <Route path="/" element={<AboutUs />} />
-          <Route path="/portfolio" element={<Portfolio />}>
-            <Route path="/portfolio/:slug" element={<Portfolio />} /> 
-          </Route>
-          <Route path="/contact" element={<ContactMe />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
+      <GlobalStyle /> 
 
-      </ThemeProvider>
+      {location.pathname !== '/admin' && <Nav />}
+
+      <Routes>
+        <Route path="/" element={<AboutUs />} />
+        <Route path="/portfolio" element={<Portfolio />}>
+          <Route path="/portfolio/:slug" element={<Portfolio />} /> 
+        </Route>
+        <Route path="/contact" element={<ContactMe />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
     </div>
   );
 }

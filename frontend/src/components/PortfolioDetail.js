@@ -3,10 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import {
-    Panel
-} from 'react95';
-
 import {useApi} from '../hooks/useApi'
 import { useNavigate } from 'react-router-dom';
 
@@ -69,7 +65,7 @@ const CardShaddow = styled.div`
     z-index: 5;
 `;
 
-const Detail = styled(Panel)`
+const Detail = styled.div`
     width: 80%;
     min-height: 80vh;
     position: absolute;

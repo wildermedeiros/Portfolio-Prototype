@@ -1,22 +1,21 @@
 import React from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import styled from 'styled-components'
-
-import { Folder, Wab321018 } from '@react95/icons';
-
 
 const SocialNetworkSection = () => {
     return (
         <Network>
             <Hide>
                 <Social href="http://github.com/wildermedeiros" target='_blank'>
-                    <Folder />                  
+                    <FontAwesomeIcon icon="fa-brands fa-github" size='2x' />
                     <h3>github.com/wildermedeiros</h3>
                 </Social>
             </Hide>
             <Hide>
                 <Social href="http://linkedin.com/in/wildermedeiros" target='_blank'>
-                    <Wab321018 />                  
+                    <FontAwesomeIcon icon="fa-brands fa-linkedin" size='2x' />
                     <h3>LinkedIn</h3>
                 </Social>
             </Hide>
