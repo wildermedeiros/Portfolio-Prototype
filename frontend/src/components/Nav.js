@@ -1,16 +1,24 @@
 import React from 'react'
 
-//Styled Components
 import styled from 'styled-components'
 
-//Navigation
-import { Link } from 'react-router-dom'
+import Userfront from "@userfront/react";
+
+import { Link, useNavigate } from 'react-router-dom'
+import { LogoutButton } from './auth/Authentication'
+
+Userfront.init("jb7v5wzn");
 
 const Nav = () => {
+    const navigate = useNavigate()
     const menuOptions = {
         about: '<About Me />',
         portfolio: '<Portfolio />',
         contact: '<Contact Me />'
+    }
+
+    const exitDetailHandler = (e) => {
+            navigate('/portfolio')
     }
 
     return (
@@ -28,6 +36,21 @@ const Nav = () => {
                 <li>
                     <Link to='/contact'>{menuOptions.contact}</Link>
                 </li>
+
+                {
+                    !Userfront.accessToken() && (
+                        <>
+                            <li>
+                                <Link to='/login'>Login</Link>
+                            </li>
+                            <li>
+                                <Link to='/signup'>Signup</Link>
+                            </li>
+                        </>
+                    )
+                }
+                
+                {Userfront.accessToken() && <li><LogoutButton/></li>}
             </ul>
         </StyledNav>
     )
@@ -57,7 +80,7 @@ const StyledNav = styled.nav`
         font-family: "Indie Flower", cursive;
     }
     li {
-        padding-left: 10rem;
+        padding-left: 5rem;
         position: relative;
         font-family: "Jura", sans-serif;
         a{

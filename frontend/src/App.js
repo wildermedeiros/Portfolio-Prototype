@@ -6,13 +6,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
-import { Route, Routes , useLocation, useNavigate} from 'react-router-dom'
+import { Route, Routes , useLocation} from 'react-router-dom'
 
 import AboutUs from "./pages/AboutUs";
 import Portfolio from "./pages/Portfolio";
 import Nav from './components/Nav'
 import ContactMe from "./pages/ContactMe";
 import Admin from "./pages/Admin";
+import { LoginForm, SignupForm } from "./components/auth/Authentication";
 
 function App() {
   const location = useLocation()
@@ -31,16 +32,11 @@ function App() {
         </Route>
         <Route path="/contact" element={<ContactMe />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/login" element={<LoginForm />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
-// todo
-/**  
-  • Explorar como é possível renderizar um componente do react em cima de outro
-      https://stackoverflow.com/questions/59456903/react-route-to-be-render-inside-another-component
-  • Verificar se o PortfolioDetail.js está ok
-*/

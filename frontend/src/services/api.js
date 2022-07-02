@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import Userfront from '@userfront/react'
 
-Userfront.init('9ny8dvbd')
+Userfront.init("jb7v5wzn");
 
 const accessToken = Userfront.accessToken()
 
