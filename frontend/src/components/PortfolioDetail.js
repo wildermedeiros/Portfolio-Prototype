@@ -20,14 +20,12 @@ const PortfolioDetail = ({slug}) => {
 
     return (
         <CardShaddow className="shaddow" onClick={exitDetailHandler}>
-            <Detail layoutid={slug}
-                variant='outside'
-                shadow>
+            <Detail layoutId={slug}>
                 <Stats>
                     <div>
-                        <Title layoutid={`title ${slug}`}>{data?.data?.title}</Title>
+                        <Title layoutId={`title ${slug}`}>{data?.data?.title}</Title>
                         <DescriptionShort>
-                            <p layoutid={`descr ${slug}`}>{data?.data?.description}</p>
+                            <p layoutId={`descr ${slug}`}>{data?.data?.description}</p>
                         </DescriptionShort>
                     </div>
                     <Info>
@@ -49,7 +47,7 @@ const PortfolioDetail = ({slug}) => {
                 <Description>
                     <p>{data?.data?.longDescription}</p>
                 </Description>
-                <img src={data?.data?.image} layoutid={`image ${slug}`} />
+                <img src={data?.data?.image} layoutId={`image ${slug}`} />
             </Detail>
         </CardShaddow>
     )
@@ -59,15 +57,27 @@ const CardShaddow = styled.div`
     width: 100%;
     min-height: 100vh;
     overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 5;
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #ff7676;
+    }
+    &::-webkit-scrollbar-track {
+        background: white;
+    }
 `;
 
 const Detail = styled.div`
     width: 80%;
     min-height: 80vh;
+    border-radius: 1rem;
+    background: white;
     position: absolute;
     left: 10%;
     top: 15%;

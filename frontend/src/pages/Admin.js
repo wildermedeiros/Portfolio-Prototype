@@ -66,12 +66,14 @@ const Admin = (location) => {
 
 export default Admin
 
+// TODO
 /*
- todo 
-    /////  dar rollback na versão do bootstrap para tentar utilizar o cardscolum
+//  • dar rollback na versão do bootstrap para tentar utilizar o cardscolum
     • Dar refresh na página de admin após inserir, editar ou excluir algum portfolio
     • Verificar usuarios que não possuem role, possibilidade da aplicação não dar erro e redirecionar para pagina de login
-    • Portfolio: melhorar página de details
-    • Verificar requisitos do trabalho
+//  • Portfolio: melhorar página de details
+//  • Verificar requisitos do trabalho
     • Userfront: Utilizar versão antiga
+    • Portfolio: Cards: Melhorar
+    • Montar apresentação
 */
