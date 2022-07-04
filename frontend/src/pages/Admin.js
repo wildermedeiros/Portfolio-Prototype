@@ -1,24 +1,24 @@
-import {React, useState} from 'react'
+import {React} from 'react'
 
-import {Tabs, Tab, Container } from 'react-bootstrap'
+import { Tabs, Tab, Container, Jumbotron } from 'react-bootstrap'
 
 import PortfolioList from '../components/admin/PortfolioList'
 import WelcomeTab from '../components/admin/WelcomeTab'
 
-import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Userfront from "@userfront/react";
 
 import jwt_decode from 'jwt-decode'
 
+
 Userfront.init("jb7v5wzn");
 
 const Admin = (location) => {
-    const navigate = useNavigate()
-    const projectId = 'jb7v5wzn'
-
+    const projectID = 'jb7v5wzn'
+    
     if (!Userfront.accessToken()) {
         return (
-            <Redirect to={{
+            <Navigate to={{
                 pathname: '/login',
                 state: { from: location },
             }}
@@ -28,12 +28,12 @@ const Admin = (location) => {
     const accessData = jwt_decode(Userfront.accessToken())
     const userData = jwt_decode(Userfront.idToken())
 
-    const roles = accessData.authorization[projectId].roles
+    const roles = accessData.authorization[projectID].roles
     const isAdmin = roles.includes('admin')
 
     if (!isAdmin) {
         return (
-            <Redirect to={{
+            <Navigate to={{
                 pathname: '/portfolio',
             }}
             />
@@ -49,7 +49,7 @@ const Admin = (location) => {
     return (
         <Container>
             <div>
-                <h1>Admin Panel</h1>
+                <Jumbotron><h1>Admin Panel</h1></Jumbotron>
             </div>
 
             <Tabs transition={false} defaultActiveKey="home" id="tab-navigation">
@@ -65,3 +65,13 @@ const Admin = (location) => {
 }
 
 export default Admin
+
+/*
+ todo 
+    /////  dar rollback na versão do bootstrap para tentar utilizar o cardscolum
+    • Dar refresh na página de admin após inserir, editar ou excluir algum portfolio
+    • Verificar usuarios que não possuem role, possibilidade da aplicação não dar erro e redirecionar para pagina de login
+    • Portfolio: melhorar página de details
+    • Verificar requisitos do trabalho
+    • Userfront: Utilizar versão antiga
+*/
