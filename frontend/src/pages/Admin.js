@@ -76,4 +76,5 @@ export default Admin
     • Userfront: Utilizar versão antiga
     • Portfolio: Cards: Melhorar
     • Montar apresentação
+    • Docker: desenvolver
 */
