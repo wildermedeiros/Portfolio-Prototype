@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    process.env.MONGO_URL_CONNECT,
+    'mongodb+srv://wildermedeiros:qzUawfDbn9Dww6WR@cluster0.ff2rpgh.mongodb.net/?retryWrites=true&w=majority',
     // {
     //     useNewUrlParser: true,
     //     useUnifiedTopology: true

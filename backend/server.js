@@ -1,7 +1,7 @@
 var express = require('express');
 require('dotenv').config();
 
-const api = require('./backend/routes');
+const api = require('./routes');
 
 const app = express();
 
@@ -24,5 +24,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const PORT = process.env.PORT;
-app.listen(PORT);
+app.listen(5000);
 
