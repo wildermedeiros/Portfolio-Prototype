@@ -1,0 +1,36 @@
+version: "3"
+services:
+  nginx:
+    depends_on:
+      - backend
+      - frontend
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3050:80"
+  backend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: "./backend"
+    volumes:
+      - /app/node_modules
+      - ./backend:/app
+    environment:
+      - PORT=5000
+      - MONGO_USER=wildermedeiros
+      - MONGO_PASSWORD=qzUawfDbn9Dww6WR
+      - MONGO_URL_CONNECT=mongodb+srv://wildermedeiros:qzUawfDbn9Dww6WR@cluster0.ff2rpgh.mongodb.net/?retryWrites=true&w=majority
+      - REACT_APP_JWT_PUBLIC_SECRET=LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQ0lqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FnOEFNSUlDQ2dLQ0FnRUF3Umg4NHNLalBNUFIvU3BiTFp4MQpNcmR3WGUrazN5aEwzeUt4UldvaW9WVHBKOVpZWjVTeTkyOGtNMWZaMHd2MkE2bGdaR29ibXBBMEFiU1Z3dE85ClVHMTRURFFjYjkzcm0xSU5xU1hLM2pyN01TdFdSbUxrbnZCNWFGYUIwM210Q1V1N0pQRXpXSllBaW5iRXkydmUKMWloSFpCVEVGSWRVYnU4NTN2cWc5elloS1JHRm1QMlN6THdpb0d5L2lOL0R6SkZvNUVZbkpsVDdNSUl0WmZBRApZYVdjR2h6SktEbWxTVjFLWWVXa1hNclgrM0NoU245VGlPcCtBbUJTcE9wZkp4aVEyVElPWmFrN2hYNjdaMkcwCk9KUkl2em8xYnBDdHVIcDdhQXltL1RhKzUzNW5XZGFkVUhQbmlpcGcwRjVoSlRTbTRTaGVQOU1GS1lZNUZGRHcKSTVlVlorNEwraDBNcDU5WkR6YlJHQytQQUJCYVFXcG44VmZuNFUwbEdhbkhUV0xuOUcxM2NIRVhPaGsyTnNaNApaZ3lqbmozOWVyek92TEg3OUVpTmxEZFFzS3orUG1xNXF2eVB3dm9zek11OFA4Wk14T3NkTGp5Ui9lNFFnMk12CmNtcCtwN3ViQlQyVGJMaTBKOUZ0OWxHR09rR28wSVlHVTZobGlGQW9lbmwzaXBkQlNlWFdVRG53cjlWMkx3Z3YKd1FCVHRCTW5uY0l1STdrLzBob0lwRzBFVDJIaDRMY0wwR2RKVVBSNVBWa1pQM1J5a2tnNEJRaTFaRnJpalJwRgp3ZUt2NnEwbHArYkpiR0NWL1U4b0M1QXV3aHdqOWZadzhOWExnT2xIRktrVWhpM2RvZGhJK1g3Nm5sY2VJSUltCjcyRlV5S0tuQ2JURTZjeVhxYTlwVkpjQ0F3RUFBUT09Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQ==
+      - REACT_APP_USERFRONT_PROJECT_ID=jb7v5wzn
+  frontend:
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./frontend
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
